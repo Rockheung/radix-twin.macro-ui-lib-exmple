@@ -4,26 +4,13 @@
   "version": "0.0.1",
   "type": "module",
   "scripts": {
-    "dev": "vite",
+    "dev": "NODE_ENV=development vite",
     "build": "tsc && vite build",
     "preview": "vite preview"
   },
-  "devDependencies": {
-    "@babel/plugin-transform-react-jsx": "^7.21.0",
-    "@emotion/babel-plugin-jsx-pragmatic": "^0.2.0",
-    "@types/node": "^18.14.6",
-    "autoprefixer": "^10.4.13",
-    "babel-plugin-macros": "^3.1.0",
-    "postcss": "^8.4.21",
-    "tailwindcss": "^3.2.7",
-    "twin.macro": "^3.1.0",
-    "typescript": "^4.9.5",
-    "vite": "^4.1.0",
-    "vite-tsconfig-paths": "^4.0.5"
-  },
   "dependencies": {
-    "@emotion/react": "^11.10.6",
-    "@emotion/styled": "^11.10.6",
+    "@emotion/react": "^11.10.5",
+    "@emotion/styled": "^11.10.5",
     "@radix-ui/react-accordion": "^1.1.0",
     "class-variance-authority": "^0.4.0",
     "clsx": "^1.2.1",
@@ -33,8 +20,27 @@
     "tailwind-merge": "^1.10.0",
     "tailwindcss-animate": "^1.0.5"
   },
-  "files": ["dist"],
+  "devDependencies": {
+    "@babel/plugin-transform-react-jsx": "^7.19.0",
+    "@emotion/babel-plugin-jsx-pragmatic": "^0.2.0",
+    "@types/node": "^18.14.6",
+    "@types/react-dom": "^18.0.9",
+    "@vitejs/plugin-react": "^3.0.0",
+    "autoprefixer": "^10.4.13",
+    "postcss": "^8.4.21",
+    "tailwindcss": "^3.2.7",
+    "twin.macro": "^3.1.0",
+    "typescript": "^4.9.4",
+    "vite": "^4.0.0",
+    "vite-tsconfig-paths": "^4.0.5"
+  },
+  "files": [
+    "dist"
+  ],
   "exports": {
-    ".": "./dist/components.js"
+    ".": {
+      "require": "./dist/index.umd.cjs",
+      "import": "./dist/index.js"
+    }
   }
 }
