@@ -1,1 +1,1 @@
-declare module "my-components"
+declare module 'my-components'

@@ -1,17 +1,14 @@
-const { fontFamily } = require("tailwindcss/defaultTheme")
+const { fontFamily } = require("tailwindcss/defaultTheme");
 
 /** @type {import('tailwindcss').Config} */
-module.exports = { 
+module.exports = {
+  darkMode: ["class", '[data-theme="dark"]'],
+  content: ["./src/**/*.{ts,tsx}"],
   theme: {
-    darkMode: ["class", '[data-theme="dark"]'],
-    content: ["app/**/*.{ts,tsx}", "components/**/*.{ts,tsx}"],
     extend: {
       colors: {
-        electric: '#db00ff',
-        ribbon: '#0047ff',
-      },
-      fontFamily: {
-        sans: ["var(--font-sans)", ...fontFamily.sans],
+        electric: "#db00ff",
+        ribbon: "#0047ff",
       },
       keyframes: {
         "accordion-down": {
@@ -30,4 +27,4 @@ module.exports = {
     },
   },
   plugins: [require("tailwindcss-animate")],
-}
+};

@@ -1,14 +1,26 @@
 import {
+  PureReactParagraph,
+  EmotionParagraph,
+  StyledParagraph,
+  TwinEmotionParagraph,
+  InlineTwinParagraph,
   Accordion,
+  AccordionContent,
   AccordionItem,
   AccordionTrigger,
-  AccordionContent,
 } from "my-components";
 
 function App() {
   return (
-    <div className="App">
-      <Accordion type="single" collapsible className="w-[450px]">
+    <div>
+      <PureReactParagraph>{"Hello pure react paragraph"}</PureReactParagraph>
+      <EmotionParagraph>{"Emotion based styled component"}</EmotionParagraph>
+      <StyledParagraph>{"Style-fixed paragraph"}</StyledParagraph>
+      <TwinEmotionParagraph>
+        {"TailwindCSS based paragraph"}
+      </TwinEmotionParagraph>
+      <InlineTwinParagraph>{"Inline Twin based paragraph"}</InlineTwinParagraph>
+      <Accordion type="single" collapsible>
         <AccordionItem value="item-1">
           <AccordionTrigger>Is it accessible?</AccordionTrigger>
           <AccordionContent>

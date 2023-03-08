@@ -3,14 +3,14 @@ import { createRoot } from "react-dom/client";
 import tw, { css, styled, theme, GlobalStyles as BaseStyles } from "twin.macro";
 import { Global } from "@emotion/react";
 
-const customStyles = css({
+export const customStyles = css({
   body: {
     WebkitTapHighlightColor: theme`colors.purple.500`,
     ...tw`antialiased`,
   },
 });
 
-const GlobalStyles = () => (
+export const GlobalStyles = () => (
   <>
     <BaseStyles />
     <Global styles={customStyles} />
@@ -22,7 +22,7 @@ interface ButtonProps {
   isSmall?: boolean;
 }
 
-const Button = styled.button(({ variant, isSmall }: ButtonProps) => [
+export const Button = styled.button(({ variant, isSmall }: ButtonProps) => [
   // The common button styles
   tw`px-8 py-2 rounded transform duration-75`,
 
@@ -49,7 +49,7 @@ const Button = styled.button(({ variant, isSmall }: ButtonProps) => [
   `,
 ]);
 
-const Logo = () => (
+export const Logo = () => (
   <a
     tw="w-32 mb-10 p-5 block opacity-50 hover:opacity-100"
     href="https://github.com/ben-rogerson/twin.macro"
@@ -60,7 +60,7 @@ const Logo = () => (
   </a>
 );
 
-const TwinSvg = () => (
+export const TwinSvg = () => (
   <svg fill="black" viewBox="0 0 100 35" xmlns="http://www.w3.org/2000/svg">
     <path d="m31.839 11.667c0-6.2223-3.3515-10.111-10.054-11.667 3.3514 2.3333 4.6082 5.0556 3.7704 8.1667-0.4781 1.7751-1.8653 3.0438-3.4009 4.4481-2.5016 2.2877-5.3968 4.9354-5.3968 10.718 0 6.2223 3.3515 10.111 10.054 11.667-3.3515-2.3333-4.6083-5.0556-3.7704-8.1667 0.478-1.775 1.8653-3.0438 3.4009-4.4481 2.5015-2.2877 5.3967-4.9354 5.3967-10.718z" />
     <path d="m-2.7803e-7 11.667c1.4828e-7 -6.2223 3.3515-10.111 10.055-11.667-3.3515 2.3333-4.6083 5.0556-3.7705 8.1667 0.47806 1.7751 1.8653 3.0438 3.4009 4.4481 2.5016 2.2877 5.3968 4.9354 5.3968 10.718 0 6.2223-3.3515 10.111-10.054 11.667 3.3515-2.3333 4.6083-5.0556 3.7704-8.1667-0.47805-1.775-1.8653-3.0438-3.4009-4.4481-2.5015-2.2877-5.3967-4.9354-5.3967-10.718z" />
@@ -68,7 +68,7 @@ const TwinSvg = () => (
   </svg>
 );
 
-const styles = {
+export const styles = {
   // Move long class sets out of jsx to keep it scannable
   container: ({ hasBackground }: { hasBackground: boolean }) => [
     tw`flex flex-col items-center justify-center h-screen`,
@@ -89,11 +89,11 @@ const App = () => (
 
 export default App;
 
-const container = document.getElementById("app");
-const root = createRoot(container!);
-root.render(
-  <React.StrictMode>
-    <GlobalStyles />
-    <App />
-  </React.StrictMode>
-);
+// const container = document.getElementById("app");
+// const root = createRoot(container!);
+// root.render(
+//   <React.StrictMode>
+//     <GlobalStyles />
+//     <App />
+//   </React.StrictMode>
+// );
