@@ -6,6 +6,9 @@ module.exports = {
   content: ["./src/**/*.{ts,tsx}"],
   theme: {
     extend: {
+      fontFamily: {
+        sans: ["var(--font-sans)", ...fontFamily.sans],
+      },
       colors: {
         electric: "#db00ff",
         ribbon: "#0047ff",

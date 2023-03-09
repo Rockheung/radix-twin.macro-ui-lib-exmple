@@ -1,9 +1,13 @@
-export * from "./ui/accordion";
-// export { default as AppDemo, Button, styles, TwinSvg, Logo, GlobalStyles } from './main'
 // Inline twin 적용시 필수 import
+export * as Accordion from "./ui/accordion";
+export * as Button from "./ui/button";
+// export * as Toast from "./ui/toast";
+export * as Toast from "./ui/toast2";
+export { default as Toaster } from "./ui/toaster";
+export { useToast } from "./hooks/use-toast";
+// export { default as AppDemo, Button, styles, TwinSvg, Logo, GlobalStyles } from './main'
 import tw, { theme, GlobalStyles as BaseStyles } from "twin.macro";
 
-// Just React Element
 import styled from "@emotion/styled";
 import React from "react";
 import { css, Global } from "@emotion/react";
@@ -18,10 +22,11 @@ export const customStyles = css({
 export const GlobalStyles = () => (
   <>
     <BaseStyles />
-    {/* <Global styles={customStyles} /> */}
+    <Global styles={customStyles} />
   </>
 );
 
+// Just React Element
 export const PureReactParagraph = ({
   children,
 }: {
@@ -48,7 +53,7 @@ export const InlineTwinParagraph = ({
 }: {
   children: React.ReactNode;
 }) => {
-  return <p tw="text-8xl">{children}</p>;
+  return <p tw="text-8xl text-violet-700">{children}</p>;
 };
 
 export const TwinEmotionParagraph = ({
@@ -67,3 +72,5 @@ export const TwinEmotionParagraph = ({
 // }) => {
 //   return <p css={tw("font-bold")}>{children}</p>;
 // };
+
+export { default as DataGrid } from "react-data-grid";
